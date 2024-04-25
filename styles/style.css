@@ -1,0 +1,583 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    src: url(../font/DMSans-Bold.ttf);
+    font-family: "DM";
+    font-weight: bold;
+    src: url(../font/DMSans-Regular.ttf);
+    font-family: "DM";
+    font-weight: normal;
+    src: url(../font/DMSans-Regular.ttf);
+    font-family: "DM";
+    font-weight: 100;
+}
+/* .main {
+    background: rgba(128, 128, 128, 20%);
+    width: 80%;
+    margin: 0 auto;
+} */
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+a {
+    text-decoration: none;
+}
+
+.nav-bar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    align-items: flex-start;
+    justify-content: space-around;
+    background: black;
+    width: 100%;
+    /* background: #000404 ; */
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-top: 4vh;
+    margin-bottom: 5.2vh;
+    list-style-type: none;
+    /* font-size: 1.5rem; */
+    font-family: 'Chedros';
+    font-weight: bold;
+    color: white;
+}
+li{
+    list-style-type: none;
+}
+.nav-menu li {
+    cursor: pointer;
+}
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    /* color: #8f8f8f; */
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.nav-menu a::before {
+    content: attr(data-item);
+    transition: 0.3s;
+    color: #FA543E;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    overflow: hidden;
+  }
+      
+
+.nav-menu a:hover::before {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.search {
+    /* display: flex; */
+    position: relative;
+    margin-top: 2vh;
+    width: 40%;
+}
+.search_bar {
+    display: flex;
+    text-align: left;
+    /* margin-top: 11px; */
+    margin-bottom: 11px;
+    height: 44px;
+    /* width: 357px; */
+}
+input {
+    text-align: left;
+    border: none;
+    width: 100%;
+    /* height: 100%; */
+    /* padding-left: 10px; */
+}
+input[type="text"]::placeholder {
+    text-align: left;
+  }
+
+  #result_search {
+      position: absolute;
+      z-index: 4;
+      border: 2px solid black;
+      border-radius: 3px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+  }
+  #result_search a {
+      color: gray;
+      padding: 10px;
+    }
+    #result_search a:hover {
+        color: black;
+        font-size: 1.87rem;   
+        transition: all 0.3s;
+        padding: 10px;
+      /* transform: scale(2); */
+  }
+
+.slider-container {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+}
+.slider-filter {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 80vh;
+    background: #000404;
+    opacity: 68%;
+}
+
+.arrows {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    top: 50%;
+    z-index: 3;   
+    /* left: 5%; */
+}
+.arrow {
+    cursor: pointer;
+}
+.sliders {
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    display: flex;
+    transition: left 0.3s ease-out;
+}
+.slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    width: 100vw;
+    height: 80vh;
+    flex: none;
+    color: white;
+    /* padding-left: 30px; */
+}
+.news {
+    z-index: 2;
+    margin: 0 auto;
+}
+.news h1 {
+    font-family: 'Chedros';
+    font-size: 4rem;
+}
+.news p {
+    font-size: 1.5rem;
+    font-family: 'DM';
+    width: 44vw;
+}
+.button  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: orangered; */
+    width: 151px;
+    height: 48px;
+    margin-top: 25px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    cursor: pointer;
+    border: #FA543E solid 2px;
+    font-family: 'Chedros';
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.news a {
+    color: #FA543E;
+}
+
+.button:hover{
+    color: white;
+    background: #FA543E;
+    transition: all 0.3s;
+}
+.button:hover a{
+    color: white;
+    transition: all 0.3s;
+}
+.banner {
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+}
+.no-anime {
+    transition: none;
+}
+.accueil_h2 {
+    /* margin-left: 20px; */
+    font-family: 'Chedros';
+    font-size: 3rem;
+    color: #00463E;
+    /* margin: 0; */
+    margin-left: 14vw;
+    /* padding: 0; */
+    /* margin: 0 auto; */
+}
+.mangas-pop {
+    position: relative;
+    justify-content: left;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+}
+.cards-container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    /* opacity: 20%; */
+    margin: 0 auto;
+    /* margin-top: 20vw; */
+    /* right: 10%; */
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+    justify-content: center;
+    align-items: flex-start;
+    /* grid-template-rows: repeat(2,360px);
+    gap: 24px; */
+}
+.card {
+    position: relative;
+    width: 240px;
+    height: 360px;
+    margin: 24px;
+}
+.card:nth-child(12) {
+    margin-right: 24px;
+
+}
+.img_card {
+    position: absolute;
+    width: 100%;
+    height: 360px;
+}
+.filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000404;
+    opacity: 20%;
+}
+.linear {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(0,4,4,0) 0%, rgba(0,4,4,1) 100%);
+}
+
+.img_card img {
+    width: 100%;
+    height: 360px;
+}
+.informations {
+    position: absolute;
+    width: 90%;
+    bottom: 17px;
+    left: 17px;
+    right: 17px;
+    margin: 0;
+    color: white;
+    font-family: 'DM';
+}
+.genres {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    top: 0;
+    right: 0;
+    /* height: 17px; */
+    width: 100%;
+    color: white;
+    font-family: 'DM';
+    font-weight: bold;
+}
+.genres:first-child {
+    margin-right: 50px;
+}
+.genres a {
+    color: white;
+    background: #FA543E;
+    font-family:'DM';
+    font-weight: 700;
+    border-radius: 3px;
+    margin-right: 4px;  
+    margin-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-decoration: none;
+
+}
+.date {
+    font-weight: 400;
+    font-size: 0.87rem;
+}
+.titre {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.prix {
+    margin-left: 150px;
+    font-family: 'Chedros';
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FA543E;
+}
+.button_voir {
+    position: absolute;
+    margin-bottom: 20px;
+    bottom: 0;
+    left:45%;
+    width: 120px;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    padding-left: 16px;
+    cursor: pointer;
+    border: #FA543E solid 2px;
+    color: #FA543E;
+    font-family: 'Chedros';
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.button_voir:hover{
+    background: #FA543E;
+    color: white;
+    transition: all 0.3s;
+}
+
+.stars {
+    align-items: center;
+    justify-content: center;
+    /* height: 20px; */
+    margin-bottom: 5px;
+}
+/* -----page detail_manga.php ------*/
+.container {
+    /* height: 100vh; */
+    width: 100vw;
+    background: linear-gradient(#FA543E, #000404) ;
+}
+.detail_main {
+    position: relative;
+    
+    color: black;
+    display: flex;
+    margin: 0 auto;
+    font-family: 'DM';
+    width: 80vw;
+    height: 100vh;
+}
+.container-form {
+    width: 30%;
+}
+
+.detail_manga {
+
+    margin: 0 auto  ;
+    padding-left: 20px;
+    background: whitesmoke
+}
+.detail_main img{
+    /* width: 100%; */
+    height: 100%;
+}
+.detail_main h1{
+    font-size: 4rem;
+    font-family: 'Chedros';
+}
+.achat {
+    margin-top: 20px;
+}
+.btn-form {
+    border: #FA543E 2px solid;
+    width: 40%;
+    background: white;
+    
+}
+.a-propos {
+    /* width: 100vw; */
+    height: 100vh;
+    
+    overflow-y: hidden;
+    text-align: justify;
+    font-family: 'Chedros';
+    font-size: 2rem;
+    background: #000404;
+    color: white;
+}
+.a-propos p{
+    margin: 10% 20%;
+}
+ #valider {
+     color: #FA543E;
+     background: white;
+ }
+.btn-form:hover {
+    background: #FA543E;
+   
+}
+.btn-form:hover #valider{
+    color: white;
+    background: #FA543E;
+   
+}
+.detail_prix {
+    font-family: 'Chedros';
+    font-size: 3rem;
+    font-weight: bold;
+}
+.infos_manga {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.infos_manga table{
+    border-collapse: collapse;
+    width: 20vw;
+}
+.infos_manga table,tr, td{
+    border: #000404 solid 2px;
+}
+.infos_manga table td{
+    padding: 5px;
+}
+.top {
+    /* padding: 15px 15px 0px 15px; */
+    overflow: auto;
+}
+/*--------------- mangas.php---------- */
+.cards-container-mangas {
+    padding-top: 20vh;
+    position: relative;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    /* margin-top: 20vw; */
+    /* right: 10%; */
+    flex-wrap: wrap;
+    padding-bottom: 11vh;
+    justify-content: center;
+    align-items: flex-start;
+}
+.filtre-cont {
+    position: absolute;
+    width: 10vw;
+    z-index: 3;
+    flex-direction: row;
+    top: 13vh;
+    right: 2vw;
+}
+
+.trier {
+    cursor: pointer;
+}
+.filtre  {
+    /* position: absolute; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    width: 100%;
+    border: #000404 2px solid;
+
+    /* border: #000404 2px solid; */
+
+}
+.filtre li:hover{
+}
+.filtre li:hover a{
+    background: #000404;
+    color: white;
+}
+.filtre li a {
+    padding: 0 4px;
+    color: black;
+}
+.hidden {
+    /* visibility: hidden; */
+}
+
+/* page footer.php */
+
+footer {
+    position: absolute  ;
+    left: 0;
+    bottom: -1;
+    width: 100%;
+    background-color: black;
+    height: 20vh;
+    color: white;
+    text-align: center;
+}
+@media screen and (max-width: 1200px) {
+    .nav-menu a {
+      font-size: 1rem;
+    }
+  }
+@media screen and (max-width: 830px) {
+    .nav-bar{
+        flex-direction:column-reverse ;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .nav-menu{
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        width: auto;
+    }
+    .nav-menu li {
+        margin: 0 0.5vw;    
+    }
+    .search {
+        margin-top: 0;
+    }
+    .infos_manga table {
+        width: 5vw;
+        height: 4vh;
+    }
+  }
